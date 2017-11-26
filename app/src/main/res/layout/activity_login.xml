@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context="com.example.rafael.ars_cons.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/TvInicio"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Inicia Sesión"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="52sp"
+            android:layout_alignEnd="@+id/btnSign" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Ingrese su correo"
+            android:inputType="textEmailAddress"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:met_baseColor="#ffffff"
+            app:met_floatingLabel="highlight"
+            app:met_minCharacters="9"
+            app:met_primaryColor="@color/common_google_signin_btn_text_dark_default"
+            app:met_singleLineEllipsis="true"
+            android:layout_above="@+id/txtPass"
+            android:layout_centerHorizontal="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/txtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="15dp"
+            android:hint="Ingrese su contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            android:textSize="18sp"
+            app:met_baseColor="#fff"
+            app:met_floatingLabel="highlight"
+            app:met_minCharacters="6"
+            app:met_primaryColor="#fff"
+            app:met_singleLineEllipsis="true"
+            android:layout_above="@+id/btnSign"
+            android:layout_alignStart="@+id/txtEmail" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btnSign"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TvReg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="67dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:shadowColor="#000"
+            android:text="Ingresar"
+            android:textColor="#fff"
+            app:buttonColor="@color/signUp"
+            app:cornerRadius="4dp"
+            app:shadowEnabled="true"
+            app:shadowHeight="3dp" />
+
+        <TextView
+            android:id="@+id/TvReg"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="No tienes Cuenta? Registrate Aquí"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</LinearLayout>
