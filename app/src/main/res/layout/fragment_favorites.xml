@@ -1,111 +1,12 @@
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rafael.ars_cons.FavoritesFragment">
+    tools:context="com.ambarrojostudios.rafael.habitalias.FavoritesFragment">
 
-    <RelativeLayout
+
+    <ListView
+        android:id="@+id/listViewCasa"
         android:layout_width="match_parent"
-        android:id="@+id/content"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
-
-          <android.support.design.widget.TextInputEditText
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:hint="Ingrese el nombre"
-            android:id="@+id/nombre_negocio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/desc_negocio"
-            android:layout_width="match_parent"
-            android:layout_height="78dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="85dp"
-            android:hint="Ingrese una descripcion"
-            android:inputType="text|textMultiLine"
-            android:singleLine="false" />
-
-        <Spinner
-            android:id="@+id/spinner_Tipo_construccion"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="175dp"
-            android:entries="@array/Tipo_construccion" />
-
-
-        <Spinner
-            android:id="@+id/spinner_Tipo"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="225dp"
-            android:entries="@array/Tipo" />
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_marginTop="300dp"
-            android:background="#4285f4"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textColor="@color/colorCustume"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Guardar" />
-
-
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cerrar Sesión"
-            android:layout_weight="1"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="400dp" />
-
-        <EditText
-            android:id="@+id/txtPrecio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btnSave"
-            android:layout_below="@+id/spinner_Tipo"
-            android:ems="10"
-            android:hint="Precio"
-            android:inputType="number|numberDecimal" />
-
-        <EditText
-            android:id="@+id/txtlat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/btnSave"
-            android:ems="10"
-            android:hint="lat"
-            android:inputType="number|numberDecimal" />
-
-        <EditText
-            android:id="@+id/txtlng"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnLogOut"
-            android:layout_toEndOf="@+id/txtlat"
-            android:ems="10"
-            android:hint="longuitud"
-            android:inputType="numberDecimal" />
-
-
-    </RelativeLayout>
-
-</android.support.v4.widget.NestedScrollView>
+        android:layout_height="match_parent" />
+</FrameLayout>

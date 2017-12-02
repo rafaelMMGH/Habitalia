@@ -2,29 +2,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rafael.ars_cons.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ambarrojostudios.rafael.habitalias.ProfileFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="180dp"
+        android:id="@+id/content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtNombre_usuario"
-            android:text="Nombre del usuario"
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/Image_View"
-            android:layout_width="112dp"
-            android:layout_height="142dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_account_circle_black_24dp" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            app:civ_border_color="#FFF"
+            app:civ_border_width="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/TvNombre"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Image_View"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="Nombre: "
+            android:textColor="#000"
+            android:textSize="19dp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/txtNombre_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/TvNombre"
+            android:layout_toEndOf="@+id/TvNombre"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/TvCorreo"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/TvNombre"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="Correo: "
+            android:textColor="#000"
+            android:textSize="19dp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/TvCorreo"
+            android:layout_toEndOf="@+id/TvCorreo"
+            android:inputType="textEmailAddress"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/TvTelefono"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/TvCorreo"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="Telefono: "
+            android:textColor="#000"
+            android:textSize="19dp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/TvTelefono"
+            android:layout_toEndOf="@+id/TvTelefono"
+            android:inputType="number|phone"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/txtRecoverPass"
+            android:text="Quieres cambiar tu contraseña? Da click aquí "
+            android:gravity="center"
+            android:textColor="#04909b"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_above="@+id/btnLogOut"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btnLogOut"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:buttonColor="#c8d32f2f"
+            android:textColor="#fff"
+            android:text="Cerrar Sesión"
+            android:layout_alignParentBottom="true"
+            app:cornerRadius="4dp"
+            app:shadowEnabled="true"
+            app:shadowHeight="1dp" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

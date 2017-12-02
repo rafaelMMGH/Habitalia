@@ -1,6 +1,4 @@
-package com.example.rafael.ars_cons;
-
-import android.util.Log;
+package com.ambarrojostudios.rafael.habitalias;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
@@ -18,6 +16,6 @@ public class MyFirebaseInstaceIdService extends FirebaseInstanceIdService {
 
         String token = FirebaseInstanceId.getInstance().getToken();
 
-        Log.d(TAG,"token" + token);
+      //  Log.d(TAG,"token" + token);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.rafael.ars_cons;
+package com.ambarrojostudios.rafael.habitalias;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     return true;
                 case R.id.navigation_search:
                     // Fragment Busqueda
-//                    transaction.replace(R.id.contenedor, new SearchFragment()).commit();
+                    transaction.replace(R.id.contenedor, new SearchFragment()).commit();
                     return true;
                 case R.id.navigation_favorites:
                     // Fragment Citas

@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.rafael.ars_cons.MainActivity"
+    tools:context="com.ambarrojostudios.rafael.habitalias.MainActivity"
     android:weightSum="1">
 
  <include layout="@layout/toolbar" />
-
 
   <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -21,9 +20,13 @@
         app:menu="@menu/navigation" />
 
   <FrameLayout
+      android:layout_marginTop="?attr/actionBarSize"
+      android:layout_marginBottom="?attr/actionBarSize"
       android:id="@+id/contenedor"
       android:layout_width="match_parent"
-      android:layout_height="512dp"
-      android:layout_weight="1"></FrameLayout>
+      android:layout_height="match_parent"
+      android:layout_weight="1">
+
+  </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

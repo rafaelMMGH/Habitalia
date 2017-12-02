@@ -1,4 +1,4 @@
-package com.example.rafael.ars_cons;
+package com.ambarrojostudios.rafael.habitalias;
 
 import org.junit.Test;
 

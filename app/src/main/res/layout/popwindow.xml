@@ -10,84 +10,58 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/titulo"
+            android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:text="Título"
             android:textAlignment="center"
-            android:textColor="#90000000"
-            android:textSize="33dp"
+            android:textColor="#000"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
-
         <TextView
-            android:id="@+id/hab"
-            android:layout_width="fill_parent"
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/titulo"
-            android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
-            android:text="Habitaciones: "
-            android:textAlignment="center"
+            android:layout_below="@+id/txtTitulo"
+            android:paddingBottom="10dp"
+            android:text="Descripción: "
+            android:textColor="#000"
             android:textSize="25dp" />
 
-
         <TextView
-            android:id="@+id/plantas"
-            android:layout_width="fill_parent"
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/hab"
-            android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
-            android:text="Plantas: "
-            android:textAlignment="center"
+            android:layout_below="@+id/tvDesc"
+            android:paddingBottom="10dp"
+            android:text=" "
+            android:textColor="#000"
             android:textSize="25dp" />
-
-
-        <TextView
-            android:id="@+id/RenVen"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/plantas"
-            android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
-            android:text="En renta"
-            android:textAlignment="center"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/Precio"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_below="@+id/RenVen"
-            android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
-            android:text="Precio: "
-            android:textAlignment="center"
-            android:textSize="25dp" />
-
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="false"
-            android:layout_below="@+id/Precio"
+            android:layout_below="@+id/txtDesc"
             android:gravity="center_horizontal"
             android:paddingBottom="5dp"
-            android:text="Fotos"
+            android:text="Imagenes:"
             android:textAlignment="center"
+            android:textColor="#000"
             android:textSize="25dp" />
 
-        <android.support.v4.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/svFotos"
+            android:orientation="horizontal"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:layout_below="@+id/textView4"
             android:layout_alignParentStart="true">
@@ -97,38 +71,36 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:id="@+id/ivTres"
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cameraicon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/ivDos" />
+
+                <ImageView
+                    android:id="@+id/ivDos"
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cameraicon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/ivUno" />
+
+                <ImageView
+                    android:id="@+id/ivUno"
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/cameraicon"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true" />
-
-                <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                    android:scaleType="fitXY"
-                android:src="@drawable/cameraicon"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="12dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/cameraicon" />
+                    android:layout_alignParentStart="true" />
 
             </RelativeLayout>
+        </ScrollView>
 
-
-        </android.support.v4.widget.NestedScrollView>
-
-
+        <!--
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
@@ -141,19 +113,19 @@
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="28sp" />
+        -->
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnCita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_below="@+id/button2"
-            android:layout_marginTop="13dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/svFotos"
             android:background="#3b5998"
             android:text="Realizar cita"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="28sp" />
-
     </RelativeLayout>
 </ScrollView>

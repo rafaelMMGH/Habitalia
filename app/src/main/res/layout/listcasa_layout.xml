@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imCasa"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/icon"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="47dp" />
+
+            <TextView
+                android:id="@+id/nombre_casa"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Nombre"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/descripcion_casa"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="12dp"
+                android:textSize="20dp"
+                android:layout_below="@+id/nombre_casa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_toEndOf="@+id/imCasa" />
+
+            <TextView
+                android:id="@+id/precio_casa"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="12dp"
+                android:textSize="20dp"
+                android:text="Precio"
+                android:layout_below="@+id/descripcion_casa"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imCasa" />
+
+            <TextView
+                android:id="@+id/empresa"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="12dp"
+                android:textSize="20dp"
+                android:text="Empresa"
+                android:layout_below="@+id/precio_casa"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imCasa" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

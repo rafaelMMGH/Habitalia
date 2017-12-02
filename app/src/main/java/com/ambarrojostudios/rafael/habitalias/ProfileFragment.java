@@ -1,4 +1,4 @@
-package com.example.rafael.ars_cons;
+package com.ambarrojostudios.rafael.habitalias;
 
 
 import android.app.Activity;
@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,8 +47,10 @@ public class ProfileFragment extends Fragment{
 
     public static final int CAMERA_REQUEST_CODE = 0;
 
-    private TextView txtNombre_usuario;
+    private TextView txtRecoverPass;
+    private EditText txtNombre_usuario,txtCorreo,txtTelefono;
     private ImageView Image_view;
+    private Button btnLogOut;
 
     private ProfileFragment.OnFragmentInteractionListener mListener;
 
@@ -66,7 +70,26 @@ public class ProfileFragment extends Fragment{
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        txtNombre_usuario = (TextView) v.findViewById(R.id.txtNombre_usuario);
+        mAuth = FirebaseAuth.getInstance();
+
+        txtNombre_usuario = (EditText) v.findViewById(R.id.txtNombre_usuario);
+        txtCorreo = (EditText) v.findViewById(R.id.txtCorreo);
+        txtTelefono = (EditText) v.findViewById(R.id.txtTelefono);
+
+        txtRecoverPass = (TextView) v.findViewById(R.id.txtRecoverPass);
+        txtRecoverPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = txtCorreo.getText().toString().trim();
+
+                if (mAuth.sendPasswordResetEmail(email).isSuccessful()){
+                    Toast.makeText(getActivity(), "Ha ocurrido un error, intente más tarde", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getActivity(), "Solicitud enviada, revise su correo", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         Image_view = (ImageView) v.findViewById(R.id.Image_View);
         Image_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +100,17 @@ public class ProfileFragment extends Fragment{
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivityForResult(Intent.createChooser(intent, "Seleccciona una imagen para tu perfil"),CAMERA_REQUEST_CODE);
                 }
+            }
+        });
+
+        btnLogOut = (Button) v.findViewById(R.id.btnLogOut);
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                getActivity().finish();
+                startActivity(new Intent(getActivity(),LoginActivity.class));
+
             }
         });
 
@@ -92,6 +126,8 @@ public class ProfileFragment extends Fragment{
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             txtNombre_usuario.setText(String.valueOf(dataSnapshot.child("fld_nombre").getValue()));
+                            txtCorreo.setText(String.valueOf(dataSnapshot.child("fld_correo").getValue()));
+                            txtTelefono.setText(String.valueOf(dataSnapshot.child("fld_telefono").getValue()));
                             String imageUrl = String.valueOf(dataSnapshot.child("fld_imagen").getValue());
                             if (URLUtil.isValidUrl(imageUrl))
                                 Picasso.with(getActivity().getApplicationContext()).load(Uri.parse(imageUrl)).into(Image_view);
@@ -193,7 +229,6 @@ public class ProfileFragment extends Fragment{
 
     }
 
-
     @Override
     public void onDetach() {
         super.onDetach();
@@ -202,7 +237,6 @@ public class ProfileFragment extends Fragment{
 
 
     }
-
 
     public class OnFragmentInteractionListener {
     }

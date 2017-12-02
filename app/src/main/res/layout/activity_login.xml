@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context="com.example.rafael.ars_cons.LoginActivity">
+    tools:context="com.ambarrojostudios.rafael.habitalias.LoginActivity">
 
     <RelativeLayout
         android:id="@+id/content"

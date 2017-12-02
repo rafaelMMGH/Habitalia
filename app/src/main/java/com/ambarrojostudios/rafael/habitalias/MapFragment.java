@@ -1,21 +1,15 @@
-package com.example.rafael.ars_cons;
+package com.ambarrojostudios.rafael.habitalias;
 
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,7 +29,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     GoogleMap mMap;
     double lat = 0.0, lng = 0.0;
-    private Marker marker,marcador1, marcador2, marcador3,marcador4,marcador5;
+    private Marker marker,marcador1, marcador2,marcador3;
 
 
     public MapFragment() {
@@ -64,50 +58,29 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
        mMap = googleMap;
        //miUbicacion();
 
-        LatLngBounds Tux = new LatLngBounds(new LatLng(16.657857, -93.297801), new LatLng(16.820600, -92.965465));
+        LatLngBounds Tux = new LatLngBounds(new LatLng(16.657857, -93.297801), new LatLng(16.747417, -92.639064));
         mMap.setLatLngBoundsForCameraTarget(Tux);
 
-        mMap.setMinZoomPreference(12.3f);
-        mMap.setMaxZoomPreference(16);
+        mMap.setMinZoomPreference(10);
+        mMap.setMaxZoomPreference(20);
 
         LatLng latLng = new LatLng(16.754909, -93.133057);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 13);
         mMap.animateCamera(cameraUpdate);
 
         marcador1 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(16.746493, -93.129060))
-                .title("Casa en Renta")
-                .snippet("Renta\n2 planta(s) \n5 habitaciones \n2 baños \n$3000")
+                .position(new LatLng(16.74858235215322,-93.15033596009015))
+                .title("Residencial Colina Universidad")
                 .draggable(false));
 
-
-
-
-        marcador2 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(16.750295, -93.158452))
-                .title("Departamento en Venta")
-                .snippet("Renta\n1 planta(s) \n3 habitacion(es) \n1 baño(s) \n$2000")
+        marcador2 = mMap.addMarker(new MarkerOptions() // central de abasto
+                .position(new LatLng(16.752877, -93.069009))
+                .title("Residencial Posada")
                 .draggable(false));
 
-
-        marcador3 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(16.764813, -93.153995))
-                .title("Casa en Venta")
-                .snippet("Venta\n2 plantas \n8 habitaciones \n4 baños \n$500000")
-                .draggable(false));
-
-
-        marcador4 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(16.765307, -93.129024))
-                .title("Departamento en Renta")
-                .snippet("Renta\n3 plantas \n10 habitaciones \n5 baños \n$15000")
-                .draggable(false));
-
-
-        marcador5 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(16.776280, -93.131438))
-                .title("Casa en Venta")
-                .snippet("Venta\n2 plantas \n2 habitaciones \n2 baños \n$6000")
+        marcador3 = mMap.addMarker(new MarkerOptions() // san cristobal
+                .position(new LatLng(16.747296,-92.650865))
+                .title("Residencial Villa Real")
                 .draggable(false));
 
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -119,25 +92,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     Intent intent = new Intent(getContext(), Pop.class);
                     startActivity(intent);
 
+                }else if(marker.equals(marcador2))
+                {
+                    Intent intent = new Intent(getContext(), Pop.class);
+                    startActivity(intent);
+                }else if (marker.equals(marcador3))
+                {
+                    Intent intent = new Intent(getContext(), Pop.class);
+                    startActivity(intent);
                 }
+
             }
         });
 
     }
 
-
-
-
-   /* public boolean onMarkerClick(final Marker marker) {
-
-        if (marker.equals(marcador1))
-        {
-            Intent intent = new Intent(getContext(), Pop.class);
-            startActivity(intent);
-
-        }
-        return  true;
-    } */
 
     @Override
     public void onAttach(Context context) {
@@ -189,16 +158,4 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     };
 
-    /*private void miUbicacion() {
-
-
-        LocationManager locationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            return;
-        }
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        actualizarUbicacion(location);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,5000,5,locationListener);
-    } */
 }

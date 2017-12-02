@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rafael.ars_cons">
+    package="com.ambarrojostudios.rafael.habitalias">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,45 +12,52 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <permission
-        android:name="com.example.rafael.ars_cons.permission.MAPS_RECEIVE"
+        android:name="com.ambarrojostudios.rafael.habitalias.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.example.rafael.ars_cons.permission.MAPS_RECEIVE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_map_black_24dp"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_map_black_24dp"
+        android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.ambarrojostudios.rafael.habitalias.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
 
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name="com.ambarrojostudios.rafael.habitalias.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyFirebaseInstaceIdService">
+        <service android:name="com.ambarrojostudios.rafael.habitalias.MyFirebaseInstaceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name=".LoginActivity"
+            android:name="com.ambarrojostudios.rafael.habitalias.LoginActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name="com.ambarrojostudios.rafael.habitalias.RegisterActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
         <!--
               <meta-data
                   android:name="com.google.android.gms.version"
@@ -73,11 +80,18 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:name="com.ambarrojostudios.rafael.habitalias.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            ></activity>
 
-        <activity android:name=".Pop"
-           android:theme="@style/AppTheme.CustomTheme"
+
+        <activity
+            android:name="com.ambarrojostudios.rafael.habitalias.Pop"
+            android:theme="@style/AppTheme.CustomTheme"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             ></activity>
     </application>
 
